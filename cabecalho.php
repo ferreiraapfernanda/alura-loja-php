@@ -14,7 +14,8 @@
         <div class="container">
             <div class="nav navbar-nav">
                 <li><a href="produto-formulario.php">Adiciona Produto</a></li>
-                    <li><a href="sobre.php">Sobre</a></li>
+                <li><a href="sobre.php">Sobre</a></li>
+                <li><a href="produto-lista.php">Produtos</a></li>
                 </ul>
             </div>
         </div>
