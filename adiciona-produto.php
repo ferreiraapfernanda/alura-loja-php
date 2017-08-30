@@ -3,14 +3,15 @@
 <?php include("banco-produto.php"); ?>
 <?php
 
-$nome = $_GET["nome"];
-$preco = $_GET["preco"];
+$nome = $_POST["nome"];
+$preco = $_POST["preco"];
+$descricao = $_POST["descricao"];
 
 // Cria a conexão com o banco
 // Padrão: Endereço, usuário, senha, banco
 
 // Executa a query
-if (insereProduto($conexao, $nome, $preco)) {
+if (insereProduto($conexao, $nome, $preco, $descricao)) {
 	?>
 	<p class="alert-success">Produto <?= $nome; ?>, <?= $preco; ?> adicionado com sucesso!</p>
 <?php
