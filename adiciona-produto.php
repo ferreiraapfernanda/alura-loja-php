@@ -1,4 +1,4 @@
-<?php include ("cabecalho.php"); ?>
+<?php include("cabecalho.php"); ?>
 <?php include("conecta.php"); ?>
 <?php include("banco-produto.php"); ?>
 <?php
@@ -8,7 +8,6 @@ $preco = $_GET["preco"];
 
 // Cria a conexão com o banco
 // Padrão: Endereço, usuário, senha, banco
-$conexao = mysqli_connect('localhost', 'root', '', 'loja');
 
 // Executa a query
 if (insereProduto($conexao, $nome, $preco)) {
