@@ -22,8 +22,9 @@ if (insereProduto($conexao, $nome, $preco)) {
 
 }
 else {
+	$mensagem = mysqli_error($conexao);
 	?>
-	<p class="alert-danger">O produto <?= $nome; ?> não foi adicionado</p>
+	<p class="alert-danger">O produto <?= $nome; ?> não foi adicionado: <?= $mensagem ?> </p>
 <?php
 
 }
