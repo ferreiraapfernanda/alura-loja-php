@@ -6,12 +6,13 @@
 $nome = $_POST["nome"];
 $preco = $_POST["preco"];
 $descricao = $_POST["descricao"];
+$categoria_id = $_POST['categoria_id'];
 
 // Cria a conexão com o banco
 // Padrão: Endereço, usuário, senha, banco
 
 // Executa a query
-if (insereProduto($conexao, $nome, $preco, $descricao)) {
+if (insereProduto($conexao, $nome, $preco, $descricao, $categoria_id)) {
 	?>
 	<p class="alert-success">Produto <?= $nome; ?>, <?= $preco; ?> adicionado com sucesso!</p>
 <?php
