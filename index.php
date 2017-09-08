@@ -1,26 +1,22 @@
 <?php include("cabecalho.php"); ?>
-<?php include("logica-usuario.php.php"); ?>
+<?php include("logica-usuario.php"); ?>
 
 <h1>Bem vindo!</h1>
 
-<?php
-
-if( isset($_GET["falhaDeSeguranca"]) ){
-    ?>
+<?php if( isset($_GET["falhaDeSeguranca"]) ){ ?>
     <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
     
-    <?php
-}
-?>
+    <?php } ?>
 
 
-<?php
-    if( usuarioEstaLogado() ){
-?>
-    <p class="text-success">Você está logado como <?= usuarioLogado() ?></p>
-<?php
-    } else { 
-?>
+<?php if( usuarioEstaLogado() ){ ?>
+    <p class="text-success">Você está logado como <?= usuarioLogado() ?>
+    <a href="logout.php">Deslogar</a></p>
+<?php } else { ?>
+
+<?php if( isset($_GET["logout"]) && $_GET["logout"] == true ) { ?>
+    <p class="alert-danger">Deslogado com sucesso</p>
+<?php } ?>
 
 <h2>Login</h2>
 <form action="login.php" method="post">
