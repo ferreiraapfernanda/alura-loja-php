@@ -1,7 +1,8 @@
-<?php include ("cabecalho.php"); ?>
-<?php include ("conecta.php"); ?>
-<?php include ("banco-produto.php"); ?>
-<?php include ("logica-usuario.php"); ?>
+<?php include("cabecalho.php"); ?>
+<?php include("conecta.php"); ?>
+<?php include("banco-produto.php"); ?>
+<?php include("logica-usuario.php"); ?>
+
 
 <?php
 $produtos = listaProdutos($conexao);
@@ -29,13 +30,6 @@ foreach ($produtos as $produto) :
 
 <?php
 endforeach
-?>
-
-<?php if( isset($_SESSION["success"]) ){ ?>
-    <p class="alert-success"> <?= $_SESSION["success"] ?> </p>
-<?php 
-        unset($_SESSION["success"]);  
-    }
 ?>
 
 </table>
