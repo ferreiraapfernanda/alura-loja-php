@@ -1,11 +1,23 @@
-<?php include ("cabecalho.php"); ?>
+<?php include("cabecalho.php"); ?>
+<?php include("logica-usuario.php.php"); ?>
 
 <h1>Bem vindo!</h1>
 
 <?php
-    if( isset($_COOKIE['usuario_logado']) ){
+
+if( isset($_GET["falhaDeSeguranca"]) ){
+    ?>
+    <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
+    
+    <?php
+}
 ?>
-    <p class="text-success">Você está logado como <?= $_COOKIE["usuario_logado"] ?></p>
+
+
+<?php
+    if( usuarioEstaLogado() ){
+?>
+    <p class="text-success">Você está logado como <?= usuarioLogado() ?></p>
 <?php
     } else { 
 ?>
