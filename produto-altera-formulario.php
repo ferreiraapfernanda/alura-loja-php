@@ -26,7 +26,12 @@
                                 <td> <textarea name="descricao" class="form-control" ><?=$produto['descricao']?></textarea> </td>
                         </tr>
                         <?php
-                                $usado = $produto['usado'] ? "checked='checked'" : "";
+                                if($produto['usado'] == 0){
+                                    $usado =  "checked='checked'";
+                                }else{
+                                    $usado = "";
+                                }
+                                
                         ?>
                         <tr>
                                 <td></td>

@@ -3,20 +3,24 @@
 
 <h1>Bem vindo!</h1>
 
-<?php if( isset($_GET["falhaDeSeguranca"]) ){ ?>
-    <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
-    
-    <?php } ?>
+<?php if( isset($_SESSION["danger"]) ){ ?>
+    <p class="alert-danger"> <?= $_SESSION["danger"] ?> </p>
+<?php 
+        unset($_SESSION["danger"]);  
+    }
+?>
+<?php if( isset($_SESSION["success"]) ){ ?>
+    <p class="alert-success"> <?= $_SESSION["success"] ?> </p>
+<?php 
+        unset($_SESSION["success"]);  
+    }
+?>
 
 
 <?php if( usuarioEstaLogado() ){ ?>
     <p class="text-success">Você está logado como <?= usuarioLogado() ?>
     <a href="logout.php">Deslogar</a></p>
 <?php } else { ?>
-
-<?php if( isset($_GET["logout"]) && $_GET["logout"] == true ) { ?>
-    <p class="alert-danger">Deslogado com sucesso</p>
-<?php } ?>
 
 <h2>Login</h2>
 <form action="login.php" method="post">
@@ -38,22 +42,4 @@
     }
 ?>
 
-    <?php
-    if( isset($_GET["login"]) && $_GET["login"] == true ){
-    ?>
-    <p class="alert-success">Logado com sucessso!</p>
-    <?php
-    }
-    ?>
-    <?php
-    if( isset($_GET["login"]) && $_GET["login"] == false ){
-    ?>
-    <p class="alert-danger">Usuário ou senha inválida!</p>
-    <?php
-    }
-    ?>
-
-    
-
-    
 <?php include ("rodape.php"); ?>

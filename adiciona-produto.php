@@ -12,9 +12,9 @@ $descricao = $_POST["descricao"];
 $categoria_id = $_POST['categoria_id'];
 
 if(array_key_exists('usado', $_POST)) {
-    $usado = "true";
+    $usado = 0;
 } else {
-    $usado = "false";
+    $usado = 1;
 }
 
 // Cria a conexão com o banco
