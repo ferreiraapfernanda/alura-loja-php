@@ -1,7 +1,5 @@
-<?php include("cabecalho.php"); ?>
-<?php include("conecta.php"); ?>
-<?php include("banco-produto.php"); ?>
-<?php include("logica-usuario.php"); ?>
+<?php require_once("cabecalho.php"); ?>
+<?php require_once("banco-produto.php"); ?>
 
 
 <?php

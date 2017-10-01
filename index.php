@@ -1,5 +1,5 @@
-<?php include("cabecalho.php"); ?>
-<?php include("logica-usuario.php"); ?>
+<?php require_once("cabecalho.php"); ?>
+<?php require_once("logica-usuario.php"); ?>
 
 <h1>Bem vindo!</h1>
 

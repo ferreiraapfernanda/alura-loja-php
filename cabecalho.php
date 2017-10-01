@@ -1,7 +1,7 @@
 
 <?php 
 error_reporting(E_ALL ^ E_NOTICE);
-include("mostra-alerta.php"); 
+require_once("mostra-alerta.php"); 
 ?>
 
 <html>

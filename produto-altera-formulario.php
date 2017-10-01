@@ -1,8 +1,7 @@
 <?php
-include ("cabecalho.php");
-include ("conecta.php");
-include ("banco-categoria.php");
-include ("banco-produto.php");
+require_once("cabecalho.php");
+require_once("banco-categoria.php");
+require_once("banco-produto.php");
 
 $categorias = listaCategorias($conexao);
 
