@@ -13,6 +13,13 @@ function listaProdutos($conexao) {
 }
 
 function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usado) {
+    
+    $nome = mysqli_real_escape_string($nome);
+    $preco = mysqli_real_escape_string($preco);
+    $descricao = mysqli_real_escape_string($descricao);
+    $categoria_id = mysqli_real_escape_string($categoria_id);
+    $usado = mysqli_real_escape_string($usado);
+    
     $query = "insert into produtos (nome, preco, descricao, categoria_id, usado) values ('{$nome}', '{$preco}', '{$descricao}', '{$categoria_id}', '{$usado}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
     return $resultadoDaInsercao;
