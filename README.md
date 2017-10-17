@@ -1,16 +1,20 @@
 # loja-php
 
-Loja PHP utilizada como exemplo de aprendizagem para os cursos I e II de PHP e MySQL do Alura.
+Loja PHP utilizada como exemplo de aprendizagem para os seguintes cursos do Alura:
+
+- PHP e MySQL I
+- PHP e MYSQL II
+- PHP I
 
 :calendar: Curso PHP e MySQL I concluído em 30-08-2017
 :calendar: Curso PHP e MySQL II concluído em 01-10-2017
-
-[Link para o Curso](https://cursos.alura.com.br/course/php-mysql-e-fundamentos-da-web/)
+:on: Curso PHP I
 
 [Link para a Aplicação](https://loja-php.000webhostapp.com/produto-lista.php)
 
 
 ## Screenshots Versão 1
+
 ![index](https://raw.githubusercontent.com/fromnanda/loja-php/master/screenshots/add-prod.png "Index")
 
 ![add-produto](https://raw.githubusercontent.com/fromnanda/loja-php/master/screenshots/add-prod.png "Adiciona Produto")
