@@ -2,9 +2,11 @@
 
 Loja PHP utilizada como exemplo de aprendizagem para os seguintes cursos do Alura:
 
-- PHP e MySQL I (Versão I)
+- [PHP e MySQL I (Versão I)](https://loja-php.000webhostapp.com/)
 - PHP e MYSQL II
 - PHP I
+
+<br><br>
 
 :calendar: Curso PHP e MySQL I concluído em 30-08-2017
 
@@ -12,11 +14,7 @@ Loja PHP utilizada como exemplo de aprendizagem para os seguintes cursos do Alur
 
 :on: Curso PHP I
 
-
-[Link para a Aplicação Versão I](https://loja-php.000webhostapp.com/)
-
-
-## Screenshots Versão 1
+## Screenshots (Versão 1)
 
 ![index](https://raw.githubusercontent.com/fromnanda/loja-php/master/screenshots/add-prod.png "Index")
 
