@@ -11,7 +11,7 @@ $categorias = listaCategorias($conexao);
 <html>
         <h1>Alterando produto</h1>
         <form action="altera-produto.php" method="post">
-                <td><input type="hidden" name="id" value="<?= $produto->id ?>" /></td>
+                <td><input type="hidden" name="id" value="<?= $produto->getId() ?>" /></td>
                 <table class="table">
                         <?php include ("produto-formulario-base.php") ?>
                         <tr>

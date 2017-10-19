@@ -8,19 +8,18 @@ verificaUsuario();
 
 $produto = new Produto();
 $categoria = new Categoria();
-$categoria->id = $_POST['categoria_id'];
+$categoria->setId($_POST['categoria_id']);
 
-$produto->nome = $_POST["nome"];
-$produto->preco = $_POST["preco"];
-$produto->descricao = $_POST["descricao"];
+$produto->setNome($_POST["nome"]);
+$produto->setPreco($_POST["preco"]);
+$produto->setDescricao($_POST["descricao"]);
 
-$produto->categoria = $categoria;
+$produto->setCategoria($categoria);
 
 if (array_key_exists('usado', $_POST)) {
-    $produto->usado = 0;
-}
-else {
-    $produto->usado = 1;
+    $produto->setUsado(0);
+} else {
+    $produto->setUsado(1);
 }
 
 // Cria a conexão com o banco
@@ -29,15 +28,12 @@ else {
 // Executa a query
 if (insereProduto($conexao, $produto)) {
     ?>
-	<p class="alert-success">Produto <?= $produto->nome; ?>, <?= $produto->preco; ?> adicionado com sucesso!</p>
+    <p class="alert-success">Produto <?= $produto->getNome(); ?>, <?= $produto->getPreco(); ?> adicionado com sucesso!</p>
 <?php
-
-}
-else {
+} else {
     $mensagem = mysqli_error($conexao);
     ?>
-	<p class="alert-danger">O produto <?= $produto->nome; ?> não foi adicionado: <?= $mensagem ?> </p>
+    <p class="alert-danger">O produto <?= $produto->getNome(); ?> não foi adicionado: <?= $mensagem ?> </p>
 <?php
-
 }
 include ("rodape.php"); ?>

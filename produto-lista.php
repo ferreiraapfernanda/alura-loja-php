@@ -12,15 +12,15 @@ $produtos = listaProdutos($conexao);
 foreach ($produtos as $produto) :
 ?>
     <tr>
-        <td><?= $produto->nome ?></td>
-        <td><?= $produto->preco ?></td>
-        <td><?= $produto->precoComDesconto() ?></td>
-        <td><?= substr($produto->descricao, 0, 40) ?></td>
-        <td><?= $produto->categoria->nome ?></td>
-        <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto->id?>">alterar</a>
+        <td><?= $produto->getNome() ?></td>
+        <td><?= $produto->getPreco() ?></td>
+        <td><?= $produto->precoComDesconto(50.5) ?></td>
+        <td><?= substr($produto->getDescricao(), 0, 40) ?></td>
+        <td><?= $produto->getCategoria()->getNome() ?></td>
+        <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto->getId()?>">alterar</a>
         <td> 
-            <form action="remove-produto.php?id=<?=$produto->id?>" method="post">
-                <input type="hidden" name="id" value="<?=$produto->id?>" />
+            <form action="remove-produto.php?id=<?=$produto->getId()?>" method="post">
+                <input type="hidden" name="id" value="<?=$produto->getId()?>" />
                 <button class="btn btn-danger">remover</button>
             </form>
         </td>

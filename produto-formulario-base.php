@@ -1,17 +1,17 @@
 <tr>
                                 <td> Nome </td>
-                                <td> <input type="text" class="form-control" name="nome" value="<?= $produto->nome ?>" /> </td>
+                                <td> <input type="text" class="form-control" name="nome" value="<?= $produto->getNome() ?>" /> </td>
                         </tr>
                         <tr> 
                                 <td> Preço </td>
-                                <td> <input type="number" class="form-control" name="preco" step="0.01" value="<?= $produto->preco ?>" /> </td>
+                                <td> <input type="number" class="form-control" name="preco" step="0.01" value="<?= $produto->getPreco() ?>" /> </td>
                         </tr>
                         <tr>
                                 <td>Descrição</td>
-                                <td> <textarea name="descricao" class="form-control" ><?= $produto->descricao ?></textarea> </td>
+                                <td> <textarea name="descricao" class="form-control" ><?= $produto->getDescricao() ?></textarea> </td>
                         </tr>
                         <?php
-                        if ($produto->usado == '1') {
+                        if ($produto->getUsado() == '1') {
                             $usado = "checked='checked'";
                         }
                         else {
@@ -29,12 +29,12 @@
                                 <select name="categoria_id" class="form-control">
                                 <?php 
                                 foreach ($categorias as $categoria) :
-                                    $essaEhACategoria = $produto->categoria->id == $categoria->id;
+                                    $essaEhACategoria = $produto->getCategoria()->getId() == $categoria->getId();
                                 $selecao = $essaEhACategoria ? "selected='selected'" : "";
 
                                 ?>
-                                    <option value="<?= $categoria->id ?>" <?= $selecao ?>>
-                                            <?= $categoria->nome ?>
+                                    <option value="<?= $categoria->getId() ?>" <?= $selecao ?>>
+                                            <?= $categoria->getNome() ?>
                                     </option>
                                 <?php endforeach ?>
                                 </select>
