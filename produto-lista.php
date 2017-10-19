@@ -14,6 +14,7 @@ foreach ($produtos as $produto) :
     <tr>
         <td><?= $produto->nome ?></td>
         <td><?= $produto->preco ?></td>
+        <td><?= $produto->precoComDesconto() ?></td>
         <td><?= substr($produto->descricao, 0, 40) ?></td>
         <td><?= $produto->categoria->nome ?></td>
         <td><a class="btn btn-primary" href="produto-altera-formulario.php?id=<?=$produto->id?>">alterar</a>
