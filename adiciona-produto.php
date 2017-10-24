@@ -6,21 +6,17 @@
 <?php
 verificaUsuario();
 
-$produto = new Produto();
 $categoria = new Categoria();
 $categoria->setId($_POST['categoria_id']);
 
-$produto->setNome($_POST["nome"]);
-$produto->setPreco($_POST["preco"]);
-$produto->setDescricao($_POST["descricao"]);
-
-$produto->setCategoria($categoria);
-
 if (array_key_exists('usado', $_POST)) {
-    $produto->setUsado(0);
-} else {
-    $produto->setUsado(1);
+    $usado = 0;
 }
+else {
+    $usado = 1;
+}
+
+$produto = new Produto($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
 
 // Cria a conexão com o banco
 // Padrão: Endereço, usuário, senha, banco
@@ -30,10 +26,13 @@ if (insereProduto($conexao, $produto)) {
     ?>
     <p class="alert-success">Produto <?= $produto->getNome(); ?>, <?= $produto->getPreco(); ?> adicionado com sucesso!</p>
 <?php
-} else {
+
+}
+else {
     $mensagem = mysqli_error($conexao);
     ?>
     <p class="alert-danger">O produto <?= $produto->getNome(); ?> não foi adicionado: <?= $mensagem ?> </p>
 <?php
+
 }
 include ("rodape.php"); ?>

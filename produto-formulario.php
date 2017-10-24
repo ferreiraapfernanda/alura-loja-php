@@ -9,8 +9,7 @@ verificaUsuario();
 $categoria = new Categoria();
 $categoria->setId(1);
 
-$produto = new Produto();
-$produto->setGategoria($categoria);
+$produto = new Produto("", 0.00, "", $categoria, 0);
 
 $categorias = listaCategorias($conexao);
 ?>

@@ -12,7 +12,7 @@ Loja PHP utilizada como exemplo de aprendizagem para os seguintes cursos do Alur
 
 :calendar: Curso PHP e MySQL II concluído em 01-10-2017
 
-:on: Curso PHP I
+:calendar: Curso PHP I concluído em 23-10-2017
 
 ## Screenshots (Versão 1)
 
