@@ -1,6 +1,6 @@
 <?php
+///// DEUSO ////
 require_once ("conecta.php");
-require_once ("class/Categoria.php.php");
 
 function listaCategorias($conexao)
 {

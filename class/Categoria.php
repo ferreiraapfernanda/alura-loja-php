@@ -10,7 +10,7 @@ class Categoria
         return $this->id;
     }
 
-    public function getNome($nome)
+    public function getNome()
     {
         return $this->nome;
     }

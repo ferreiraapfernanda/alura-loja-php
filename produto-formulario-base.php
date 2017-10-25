@@ -11,17 +11,17 @@
                                 <td> <textarea name="descricao" class="form-control" ><?= $produto->getDescricao() ?></textarea> </td>
                         </tr>
                         <?php
-                        if ($produto->getUsado() == '1') {
-                            $usado = "checked='checked'";
+                        if ($produto->getUsado() === true) {
+                            $usado = 'checked="checked"';
                         }
                         else {
-                            $usado = "";
+                            $usado = '';
                         }
 
                         ?>
                         <tr>
                                 <td></td>
-                                <td><input type="checkbox" name="usado" <?= $usado ?> value="true"> Usado
+                                <td><input type="checkbox" name="usado" <?= $usado ?> value="true"> Usado </td>
                         </tr>
                         <tr>
                                 <td>Categoria</td>

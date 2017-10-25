@@ -1,12 +1,12 @@
 <?php
 require_once ("cabecalho.php");
-require_once ("banco-categoria.php");
-require_once ("banco-produto.php");
-require_once ("class/Produto.php");
 
 $id = $_GET['id'];
-$produto = buscaProduto($conexao, $id);
-$categorias = listaCategorias($conexao);
+$produtoDao = new ProdutoDao($conexao);
+$categoriaDao = new CategoriaDao($conexao);
+
+$produto = $produtoDao->buscaProduto($id);
+$categorias = $categoriaDao->listaCategorias();
 ?>
 <html>
         <h1>Alterando produto</h1>

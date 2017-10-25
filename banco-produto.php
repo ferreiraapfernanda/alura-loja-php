@@ -1,7 +1,6 @@
 <?php
+///// DESUSO /////
 require_once ("conecta.php");
-require_once ("class/Produto.php");
-require_once ("class/Categoria.php");
 
 function listaProdutos($conexao)
 {
@@ -28,8 +27,8 @@ function insereProduto($conexao, $produto)
     $nome = mysqli_real_escape_string($conexao, $produto->getNome());
     $preco = mysqli_real_escape_string($conexao, $produto->getPreco());
     $descricao = mysqli_real_escape_string($conexao, $produto->getDescricao());
-    $categoria_id = mysqli_real_escape_string($conexao, $produto->getCategoria()->getId());
-    $usado = mysqli_real_escape_string($conexao, $produto->getUsado());
+    $categoria_id = $produto->getCategoria()->getId();
+    $usado = $produto->getUsado();
 
     $query = "insert into produtos (nome, preco, descricao, categoria_id, usado) values ('{$nome}', '{$preco}', '{$descricao}', '{$categoria_id}', '{$usado}')";
     $resultadoDaInsercao = mysqli_query($conexao, $query);
@@ -63,8 +62,8 @@ function alteraProduto($conexao, $produto)
     $nome = mysqli_real_escape_string($conexao, $produto->getNome());
     $preco = mysqli_real_escape_string($conexao, $produto->getPreco());
     $descricao = mysqli_real_escape_string($conexao, $produto->getDescricao());
-    $categoria_id = mysqli_real_escape_string($conexao, $produto->getCategoria()->getId());
-    $usado = mysqli_real_escape_string($conexao, $produto->getUsado());
+    $categoria_id = $produto->getCategoria()->getId();
+    $usado = $produto->getUsado();
 
     $query = "update produtos set nome = '{$nome}', preco = {$preco}, descricao = '{$descricao}', categoria_id= {$categoria_id}, usado = {$usado} where id = '{$id}'";
     return mysqli_query($conexao, $query);

@@ -23,7 +23,7 @@ class Produto
     }
 
     public function __destruct() {
-        echo "Destruindo o produto ".$this->getNome();
+        //echo "Destruindo o produto ".$this->getNome();
     }
     
     /**
