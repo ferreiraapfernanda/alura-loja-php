@@ -13,12 +13,20 @@ else {
     $usado = false;
 }
 
-$produto = new Produto($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
+$isbn = $_POST['isbn'];
+$tipoProduto = $_POST['tipoProduto'];
+
+if($tipoProduto == "Livro"){
+    $produto = new Livro($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
+    $produto->setIsbn($isbn);
+}else{
+    $produto = new Produto($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
+}
+
 
 $produtoDao = new ProdutoDao($conexao);
 
 // Cria a conexão com o banco
-// Padrão: Endereço, usuário, senha, banco
 
 // Executa a query
 if ($produtoDao->insereProduto($produto)) {

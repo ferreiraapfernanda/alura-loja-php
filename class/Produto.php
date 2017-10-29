@@ -1,17 +1,16 @@
 <?php
-
 class Produto
 {
-    
+
     private $id;
     private $nome;
     private $preco;
     private $descricao;
     private $categoria;
     private $usado;
-    private $isbn;
 
-    public function __construct($nome, $preco, $descricao, Categoria $categoria, $usado){
+    public function __construct($nome, $preco, $descricao, Categoria $categoria, $usado)
+    {
         $this->nome = $nome;
         $this->preco = $preco;
         $this->descricao = $descricao;
@@ -19,14 +18,18 @@ class Produto
         $this->usado = $usado;
     }
 
-    public function __toString(){
-        return $this->nome.': R$ '.$this->preco;
+    public function __toString()
+    {
+        return $this->nome . ': R$ ' . $this->preco;
     }
 
-    public function __destruct() {
+    public function __destruct()
+    {
         //echo "Destruindo o produto ".$this->getNome();
+
+
     }
-    
+
     /**
      * função precoComDesconto
      *
@@ -36,7 +39,7 @@ class Produto
     public function precoComDesconto($desconto = 10)
     {
         if ($desconto > 0 && $desconto <= 50) {
-            $this->preco -= $this->preco * ($desconto/100);
+            $this->preco -= $this->preco * ($desconto / 100);
         }
         return $this->preco;
     }
@@ -66,10 +69,7 @@ class Produto
         return $this->usado;
     }
 
-    public function getIsbn(){
-        return $this->isbn;
-    }
-    
+    /////
 
     public function setId($id)
     {
@@ -79,7 +79,9 @@ class Produto
     {
         $this->usado = $usado;
     }
-    public function setIsbn($isbn){
-        $this->isbn = $isbn;
+    
+
+    public function temIsbn(){
+        return $this instanceof Livro;
     }
 }
