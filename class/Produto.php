@@ -9,6 +9,7 @@ class Produto
     private $descricao;
     private $categoria;
     private $usado;
+    private $isbn;
 
     public function __construct($nome, $preco, $descricao, Categoria $categoria, $usado){
         $this->nome = $nome;
@@ -64,6 +65,10 @@ class Produto
     {
         return $this->usado;
     }
+
+    public function getIsbn(){
+        return $this->isbn;
+    }
     
 
     public function setId($id)
@@ -73,5 +78,8 @@ class Produto
     public function setUsado($usado)
     {
         $this->usado = $usado;
+    }
+    public function setIsbn($isbn){
+        $this->isbn = $isbn;
     }
 }
