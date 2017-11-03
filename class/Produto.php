@@ -27,7 +27,6 @@ class Produto
     {
         //echo "Destruindo o produto ".$this->getNome();
 
-
     }
 
     /**
@@ -42,6 +41,11 @@ class Produto
             $this->preco -= $this->preco * ($desconto / 100);
         }
         return $this->preco;
+    }
+
+    public function calculaImposto()
+    {
+        return $this->preco * 0.195;
     }
 
     public function getId()
@@ -79,9 +83,10 @@ class Produto
     {
         $this->usado = $usado;
     }
-    
 
-    public function temIsbn(){
+
+    public function temIsbn()
+    {
         return $this instanceof Livro;
     }
 }

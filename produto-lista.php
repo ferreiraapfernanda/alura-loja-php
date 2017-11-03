@@ -12,7 +12,7 @@ foreach ($produtos as $produto) :
     <tr>
         <td><?= $produto->getNome() ?></td>
         <td><?= $produto->getPreco() ?></td>
-        <td><?= $produto->precoComDesconto(50.5) ?></td>
+        <td><?= $produto->calculaImposto() ?></td>
         <td><?= substr($produto->getDescricao(), 0, 40) ?></td>
         <td><?= $produto->getCategoria()->getNome() ?></td>
 
