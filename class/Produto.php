@@ -1,5 +1,5 @@
 <?php
-class Produto
+abstract class Produto
 {
 
     private $id;
@@ -26,11 +26,6 @@ class Produto
     public function __destruct()
     {
         //echo "Destruindo o produto ".$this->getNome();
-
-
-
-
-
     }
 
     /**
@@ -104,18 +99,6 @@ class Produto
         return $this instanceof Ebook;
     }
 
-    public function atualizaBaseadoEm($params)
-    {
+    abstract function atualizaBaseadoEm($params);
 
-        if ($this->temIsbn()) {
-            $this->setIsbn($params['isbn']);
-        }
-        if ($this->temTaxaImpressao()) {
-            $this->setTaxaImpressao($params['taxaImpressao']);
-        }
-        if ($this->temWaterMark()) {
-            $this->setWaterMark($params['waterMark']);
-        }
-
-    }
 }

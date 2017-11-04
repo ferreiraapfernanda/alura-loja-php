@@ -7,7 +7,7 @@ verificaUsuario();
 $categoria = new Categoria();
 $categoria->setId(1);
 
-$produto = new Produto("", 0.00, "", $categoria, 0);
+$produto = new LivroFisico("", 0.00, "", $categoria, 0);
 
 $categoriaDao = new CategoriaDao($conexao);
 

@@ -43,25 +43,20 @@
                         <tr>
                                     <td>Tipo do Produto</td>
                                     <td> <select name="tipoProduto" class="form-control">
+                                    <optgroup label="Livros">
                                 <?php 
-                                $tipos = array("Produto", "Livro Fisico", "Ebook");
+                                $tipos = array("Livro Fisico", "Ebook");
 
                                 foreach ($tipos as $tipo) :
                                     $tipoSemEspaco = str_replace(" ", "", $tipo);
                                 $esseEhOTipo = get_class($produto) == $tipoSemEspaco;
                                 $selecao = $esseEhOTipo ? "selected='selected'" : "";
                                 ?>
-
-                                <?php if ($tipo == "Livro Fisico") : ?>
-                                <optgroup label="Livros">
-                                <?php endif ?>
                                     <option value="<?= $tipoSemEspaco ?>" <?= $selecao ?>>
                                             <?= $tipo ?>
                                     </option>
-                                     <?php if ($tipo == "Ebook") : ?>
-                                </optgroup>
-                                <?php endif ?>
                                 <?php endforeach ?>
+                                </optgroup>
                                 </select>
                                 </td> 
                         </tr>
@@ -85,7 +80,7 @@
                         <td>WaterMark (caso seja um Ebook)</td>
                         <td> 
                             <input type="text" name="waterMark" class="form-control" value="<?php if ($produto->temWaterMark()) {
-                                                                                            echo $produto->getWaterMark();
-                                                                                        } ?>">
+                                                                                                echo $produto->getWaterMark();
+                                                                                            } ?>">
                         </td>
                         </tr>

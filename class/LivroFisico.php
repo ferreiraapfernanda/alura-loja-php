@@ -1,10 +1,11 @@
 <?php
-
-class LivroFisico extends Livro {
+class LivroFisico extends Livro
+{
 
     private $taxaImpressao;
 
-    public function getTaxaImpressao(){
+    public function getTaxaImpressao()
+    {
         return $this->taxaImpressao;
     }
 
@@ -13,6 +14,13 @@ class LivroFisico extends Livro {
         $this->taxaImpressao = $taxaImpressao;
     }
 
+    public function atualizaBaseadoEm($params)
+    {
+
+        $this->setIsbn($params['isbn']);
+        $this->setTaxaImpressao($params['taxaImpressao']);
+
+    }
 }
 
 ?>
