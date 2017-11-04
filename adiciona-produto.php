@@ -3,32 +3,24 @@
 <?php
 verificaUsuario();
 
-$categoria = new Categoria();
-$categoria->setId($_POST['categoria_id']);
+$tipoProduto = $_POST['tipoProduto'];
+$categoria_id = $_POST['categoria_id'];
+
+$factory = new ProdutoFactory();
+$produto = $factory->criaPor($tipoProduto, $_POST);
+$produto->atualizaBaseadoEm($_POST);
+
+$produto->getCategoria()->setId($categoria_id);
 
 if (array_key_exists('usado', $_POST)) {
-    $usado = true;
+    $produto->setUsado(true);
 }
 else {
-    $usado = false;
+    $produto->setUsado(false);
 }
-
-$isbn = $_POST['isbn'];
-$tipoProduto = $_POST['tipoProduto'];
-
-if($tipoProduto == "Livro"){
-    $produto = new Livro($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
-    $produto->setIsbn($isbn);
-}else{
-    $produto = new Produto($_POST["nome"], $_POST["preco"], $_POST["descricao"], $categoria, $usado);
-}
-
 
 $produtoDao = new ProdutoDao($conexao);
 
-// Cria a conexão com o banco
-
-// Executa a query
 if ($produtoDao->insereProduto($produto)) {
     ?>
     <p class="alert-success">Produto <?= $produto->getNome(); ?>, <?= $produto->getPreco(); ?> adicionado com sucesso!</p>

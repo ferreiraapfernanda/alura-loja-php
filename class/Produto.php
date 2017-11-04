@@ -27,6 +27,10 @@ class Produto
     {
         //echo "Destruindo o produto ".$this->getNome();
 
+
+
+
+
     }
 
     /**
@@ -88,5 +92,30 @@ class Produto
     public function temIsbn()
     {
         return $this instanceof Livro;
+    }
+
+    public function temTaxaImpressao()
+    {
+        return $this instanceof LivroFisico;
+    }
+
+    public function temWaterMark()
+    {
+        return $this instanceof Ebook;
+    }
+
+    public function atualizaBaseadoEm($params)
+    {
+
+        if ($this->temIsbn()) {
+            $this->setIsbn($params['isbn']);
+        }
+        if ($this->temTaxaImpressao()) {
+            $this->setTaxaImpressao($params['taxaImpressao']);
+        }
+        if ($this->temWaterMark()) {
+            $this->setWaterMark($params['waterMark']);
+        }
+
     }
 }
